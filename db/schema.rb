@@ -14,13 +14,16 @@
 ActiveRecord::Schema.define(:version => 20120926135309) do
 
   create_table "events", :force => true do |t|
-    t.string   "name"
-    t.date     "date"
+    t.string   "name",        :null => false
+    t.date     "date",        :null => false
     t.text     "description"
-    t.string   "place"
-    t.string   "address"
+    t.string   "place",       :null => false
+    t.string   "address",     :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  add_index "events", ["date"], :name => "index_events_on_date"
+  add_index "events", ["name"], :name => "index_events_on_name", :unique => true
 
 end
