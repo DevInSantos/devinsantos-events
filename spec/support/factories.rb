@@ -17,4 +17,11 @@ FactoryGirl.define do
     DESCRICAO
     date Date.new(2012, 10, 11)
   end
+
+  factory :bruno, :class => Speaker do
+    name "Bruno Costa"
+    email "brunoadacosta@gmail.com"
+    description "Señor Desenvolvedor"
+    company "Cocento Tecnologia"
+  end
 end

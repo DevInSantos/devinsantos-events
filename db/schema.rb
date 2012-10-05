@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926135309) do
+ActiveRecord::Schema.define(:version => 20121005194508) do
 
   create_table "events", :force => true do |t|
     t.string   "name",        :null => false
@@ -25,5 +25,31 @@ ActiveRecord::Schema.define(:version => 20120926135309) do
 
   add_index "events", ["date"], :name => "index_events_on_date"
   add_index "events", ["name"], :name => "index_events_on_name", :unique => true
+
+  create_table "events_speakers", :id => false, :force => true do |t|
+    t.integer "speaker_id"
+    t.integer "event_id"
+  end
+
+  add_index "events_speakers", ["event_id"], :name => "index_events_speakers_on_event_id"
+  add_index "events_speakers", ["speaker_id"], :name => "index_events_speakers_on_speaker_id"
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "speakers", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "company"
+    t.string   "email"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_foreign_key "events_speakers", "events", :name => "events_speakers_event_id_fk"
+  add_foreign_key "events_speakers", "speakers", :name => "events_speakers_speaker_id_fk"
 
 end
