@@ -14,11 +14,3 @@ test:
   username: postgres
   password:
   min_messages: WARNING
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: devinsantos_production
-  pool: 5
-  username: postgres
-  password:
