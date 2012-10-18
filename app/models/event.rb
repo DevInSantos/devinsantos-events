@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :name, :date, :place, :address
   validates_uniqueness_of :name
+
+  default_scope order("created_at desc")
 end
