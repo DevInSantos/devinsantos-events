@@ -1,10 +1,15 @@
 class Event < ActiveRecord::Base
-  attr_accessible :address, :date, :description, :name, :place
+  attr_accessible :address, :date, :description, :name, :place, :url
 
   has_and_belongs_to_many :speakers
+  has_many :rooms
 
-  validates_presence_of :name, :date, :place, :address
+  validates_presence_of :name, :date, :place, :address, :url
   validates_uniqueness_of :name
 
   default_scope order("created_at desc")
+
+  def speaker_and_talks
+    speakers
+  end
 end

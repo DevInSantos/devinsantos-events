@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'foreigner'
 gem 'validators'
+gem 'sequel'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

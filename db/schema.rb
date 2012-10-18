@@ -11,16 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018182124) do
+ActiveRecord::Schema.define(:version => 20121018212400) do
 
   create_table "events", :force => true do |t|
     t.string   "name",        :null => false
-    t.date     "date",        :null => false
+    t.datetime "date",        :null => false
     t.text     "description"
     t.string   "place",       :null => false
     t.string   "address",     :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "url"
   end
 
   add_index "events", ["date"], :name => "index_events_on_date"
@@ -38,7 +39,10 @@ ActiveRecord::Schema.define(:version => 20121018182124) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "event_id"
   end
+
+  add_index "rooms", ["event_id"], :name => "index_rooms_on_event_id"
 
   create_table "speakers", :force => true do |t|
     t.string   "name"
@@ -73,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20121018182124) do
 
   add_foreign_key "events_speakers", "events", :name => "events_speakers_event_id_fk"
   add_foreign_key "events_speakers", "speakers", :name => "events_speakers_speaker_id_fk"
+
+  add_foreign_key "rooms", "events", :name => "rooms_event_id_fk"
 
   add_foreign_key "talks", "rooms", :name => "talks_room_id_fk"
   add_foreign_key "talks", "speakers", :name => "talks_speaker_id_fk"

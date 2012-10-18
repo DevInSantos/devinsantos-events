@@ -1,6 +1,7 @@
 Devinsantos::Application.routes.draw do
 
   resources :events, :only => :index
+  get "/speakers/:event_id" => "speakers#index", :via => :get, :as => :speakers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

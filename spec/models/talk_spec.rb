@@ -8,7 +8,7 @@ describe Talk do
 
   describe "mass assignment" do
     context "allowed attributes" do
-      [:description, :horary, :link, :name].each do |attribute|
+      [:description, :horary, :link, :name, :speaker_id, :room_id].each do |attribute|
         it { should allow_mass_assignment_of attribute }
       end
     end
