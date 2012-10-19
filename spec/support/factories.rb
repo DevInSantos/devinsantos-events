@@ -16,6 +16,7 @@ FactoryGirl.define do
     além das de nível intermediárias/avançadas.
     DESCRICAO
     date Date.new(2012, 10, 11)
+    url "http://meetup.com/devinsantos/events/81805942"
   end
 
   factory :bruno, :class => Speaker do
