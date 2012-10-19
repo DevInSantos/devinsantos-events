@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018212400) do
+ActiveRecord::Schema.define(:version => 20121019041803) do
 
   create_table "events", :force => true do |t|
     t.string   "name",        :null => false
@@ -56,9 +56,10 @@ ActiveRecord::Schema.define(:version => 20121018212400) do
   create_table "sponsors", :force => true do |t|
     t.string   "name"
     t.string   "logo_url"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "sponsorship_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "event_id"
   end
 
   create_table "talks", :force => true do |t|
@@ -79,6 +80,8 @@ ActiveRecord::Schema.define(:version => 20121018212400) do
   add_foreign_key "events_speakers", "speakers", :name => "events_speakers_speaker_id_fk"
 
   add_foreign_key "rooms", "events", :name => "rooms_event_id_fk"
+
+  add_foreign_key "sponsors", "events", :name => "sponsors_event_id_fk"
 
   add_foreign_key "talks", "rooms", :name => "talks_room_id_fk"
   add_foreign_key "talks", "speakers", :name => "talks_speaker_id_fk"
