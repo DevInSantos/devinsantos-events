@@ -25,4 +25,16 @@ FactoryGirl.define do
     description "Señor Desenvolvedor"
     company "Cocento Tecnologia"
   end
+
+  factory :cocento, :class => Sponsor do
+    name "Cocento Tecnologia"
+    sponsorship_type "Ouro"
+    logo_url "http://logo.com/logo.jpg"
+  end
+
+  factory :caelum, :class => Sponsor do
+    name "Caelum"
+    sponsorship_type "Comunity"
+    logo_url "http://logo.com/logo.jpg"
+  end
 end
