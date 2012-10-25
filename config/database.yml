@@ -5,6 +5,7 @@ development:
   pool: 5
   username: postgres
   password:
+  host: localhost
 
 test:
   adapter: postgresql
@@ -14,3 +15,4 @@ test:
   username: postgres
   password:
   min_messages: WARNING
+  host: localhost
