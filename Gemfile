@@ -18,6 +18,7 @@ group :development, :test do
   gem "thin"
   gem "awesome_print"
   gem "pry-rails"
+  gem "sextant"
   gem 'rspec-rails'
 end
 
