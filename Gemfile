@@ -24,7 +24,7 @@ end
 group :test do
   gem "shoulda-matchers"
   gem "factory_girl"
-  gem "factory_girl-preload", :git => "git://github.com/brunoadacosta/factory_girl-preload.git"
+  gem "factory_girl-preload"
   gem 'capybara'
 end
 
