@@ -20,4 +20,16 @@ describe Event do
       end
     end
   end
+
+  describe "scopes" do
+    it "should return published" do
+      devinsantos = FactoryGirl.create :devinsantos
+      next_devinsantos = FactoryGirl.create :next_devinsantos
+
+      events = Event.published
+
+      expect(events).to include devinsantos
+      expect(events).to_not include next_devinsantos
+    end
+  end
 end
