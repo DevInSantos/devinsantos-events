@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.json { render :json => @events }
+      format.html { render :index }
     end
   end
 end
