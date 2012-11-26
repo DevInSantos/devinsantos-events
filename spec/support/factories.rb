@@ -57,4 +57,9 @@ FactoryGirl.define do
     sponsorship_type "Comunity"
     logo_url "http://logo.com/logo.jpg"
   end
+
+  factory :sala1, :class => Room do
+    name "Sala 1"
+    association :event, :factory => :devinsantos
+  end
 end
