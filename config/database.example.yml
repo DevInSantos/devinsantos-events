@@ -4,7 +4,7 @@ development:
   database: devinsantos_development
   pool: 5
   username: postgres
-  password:
+  password: postgres
   host: localhost
 
 test:
@@ -13,6 +13,6 @@ test:
   database: devinsantos_test
   pool: 5
   username: postgres
-  password:
+  password: postgres
   min_messages: WARNING
   host: localhost
