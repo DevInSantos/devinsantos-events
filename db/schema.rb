@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20121201164218) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "breaks", ["event_id"], :name => "index_breaks_on_event_id"
+
   create_table "events", :force => true do |t|
     t.string   "name",         :null => false
     t.datetime "date",         :null => false
@@ -115,6 +117,8 @@ ActiveRecord::Schema.define(:version => 20121201164218) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  add_foreign_key "breaks", "events", :name => "breaks_event_id_fk"
 
   add_foreign_key "events_speakers", "events", :name => "events_speakers_event_id_fk"
   add_foreign_key "events_speakers", "speakers", :name => "events_speakers_speaker_id_fk"
