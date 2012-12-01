@@ -11,4 +11,8 @@ class Event < ActiveRecord::Base
   default_scope order("created_at desc")
 
   scope :published, where(Event.arel_table[:published_at].not_eq(nil))
+
+  def self.current
+    published.first
+  end
 end
