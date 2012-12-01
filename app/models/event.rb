@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :address, :date, :description, :name, :place, :url
+  attr_accessible :address, :date, :description, :name, :place, :url, :price
 
   has_and_belongs_to_many :speakers
   has_many :rooms, :dependent => :destroy
