@@ -9,14 +9,10 @@
 <%= link_to 'javascript:void(0)', :class => 'btn-subscribe' do %>
   <b>Inscreva-se!</b>
   <br>
-  R$ 40,00
+  <%= number_to_currency @event.price %>
 <% end %>
 <div class="event-info">
-  <time datetime="2012-11-10">
-    Sábado 10/nov/2012
-    <br>
-    Das 08h às 19h
-  </time>
+  <%= time_tag @event.date, format: :event %>
   <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
     <span itemprop="street-address">Rua Comendador Martins, 52, Vila Mathias</span>,
     <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
