@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @event = Event.current
 
     respond_to do |format|
-      format.json { render :json => @events }
+      format.json { render :json => Event.all }
       format.html { render :index }
     end
   end
