@@ -5,7 +5,7 @@ Speaker.create name: "Ricardo Valeriano", email: "ricardo.valeriano@gmail.com"
 
 Event.create(name: "5º DevInSantos",
       price: 999_999.99,
-      address: "Carvalho de Mendonça, 7283 7º andar, Vila Belmiro, Santos/SP",
+      address: "Rua Carvalho de Mendonça, 7283 7º andar, Vila Belmiro",
       date: DateTime.new(2012, 12, 1),
       description: "O evento mais maroto de Santos",
       place: "Faculdade Clips",

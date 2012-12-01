@@ -1,5 +1,5 @@
 class Speaker < ActiveRecord::Base
-  attr_accessible :company, :description, :name, :email
+  attr_accessible :company, :description, :name, :email, :twitter
 
   has_and_belongs_to_many :events
   has_many :talks, :dependent => :destroy
@@ -7,5 +7,8 @@ class Speaker < ActiveRecord::Base
   validates_presence_of :name, :email
   validates_email_format_of :email
 
-  scope :for_event, lambda { |event_id| joins(:events).joins(:talks).where(:events => {:id => event_id}).includes(:talks => [:room]) }
+  scope :for_event, lambda { |event_id| joins(:events).
+                                        joins(:talks).
+                                        where(:events => {:id => event_id}).
+                                        includes(:talks => [:room]) }
 end

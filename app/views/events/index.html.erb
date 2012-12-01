@@ -14,21 +14,13 @@
 <div class="event-info">
   <%= time_tag @event.date, format: :event %>
   <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-    <span itemprop="street-address">Rua Comendador Martins, 52, Vila Mathias</span>,
+    <span itemprop="street-address"><%= @event.address %></span>,
     <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
   </address>
 </div>
 <h3>Palestrantes</h3>
 <ul class="speakers-list">
-  <% 3.times do %>
-    <li>
-      <%= gravatar_image_tag '13k@linhareta.net', alt: 'Kiyoshi' %>
-      <br>
-      <strong>Kiyoshi Murata</strong>
-      <br>
-      Google Inc.
-    </li>
-  <% end %>
+  <%= render @speakers %>
 </ul>
 <a id="talks"></a>
 <h3>Agenda</h3>
