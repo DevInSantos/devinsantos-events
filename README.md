@@ -18,8 +18,7 @@
 
 ###Test database
 ```bash
-	rake db:test_prepare
-
+	rake db:test:prepare
 ```
 
 ###Seeds
