@@ -1,0 +1,31 @@
+body {
+	padding: 10px;
+	font-family: 'Helvetica Neue';
+	font-size: 100%;
+	color: #524640;
+}
+
+a {
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 2em;
+	text-align: center;
+}
+
+/* = group
+----------------------------------------------------------------------------------------------------*/
+.group:before,
+.group:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    *zoom: 1;
+}

@@ -1,0 +1,13 @@
+.btn-subscribe {
+	@include border-radius(.4em);
+	display: block;
+	padding: .5em;
+	background-color: #BB6038;
+	color: #FFF;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.btn-subscribe b {
+	font-size: 1.3333em;
+}

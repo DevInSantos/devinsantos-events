@@ -1,0 +1,27 @@
+.headline {
+	@include border-radius(.4em);
+	padding: .5em;
+	background-color: #9A8572;
+	font-family: "Rockwell";
+	color: #FFF;
+	text-align: center;
+}
+
+.headline span {
+	display: block;
+}
+
+.headline-one {
+	font-weight: bold;
+	font-size: 3.7em;
+	line-height: 1em;
+}
+
+.headline-two {
+	font-size: 1.3em;
+}
+
+.headline-three {
+	font-weight: bold;
+	font-size: 1.9em;
+}

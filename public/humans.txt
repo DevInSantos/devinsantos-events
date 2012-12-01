@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Leandro Alvares da Costa -- Organizer and Front-end Developer -- @leandroadacosta
+  Bruno Alvares da Costa -- Organizer and Back-end Developer -- @brunoadacosta
+
+# THANKS
+
+  All community

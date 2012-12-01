@@ -1,5 +1,78 @@
-<p>
-  Em breve o site no ar.
-  <br>
-  Por enquanto acesse nossa página no <a href="http://meetup.com/devinsantos">meetup/devinsantos</a>
+<%= link_to 'Ver programação', '#talks', :class => 'btn-view-talks' %>
+<h1 class="logo"><%= image_tag 'devinsantos-logo.png', :alt => 'DevInSantos' %></h1>
+<p class="headline">
+  <span class="headline-one">O MAIOR</span>
+  <span class="headline-two">encontro de desenvolvedores</span>
+  <span class="headline-three">da Baixada Santista</span>
 </p>
+<h2>5º DevInSantos</h2>
+<%= link_to 'javascript:void(0)', :class => 'btn-subscribe' do %>
+  <b>Inscreva-se!</b>
+  <br>
+  R$ 40,00
+<% end %>
+<div class="event-info">
+  <time datetime="2012-11-10">
+    Sábado 10/nov/2012
+    <br>
+    Das 08h às 19h
+  </time>
+  <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+    <span itemprop="street-address">Rua Comendador Martins, 52, Vila Mathias</span>,
+    <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
+  </address>
+</div>
+<h3>Palestrantes</h3>
+<ul class="speakers-list">
+  <% 3.times do %>
+    <li>
+      <%= image_tag 'http://secure.gravatar.com/avatar/0bb24fca4c125f526d68fd47bdf8a864?s=420', :alt => 'Kiyoshi' %>
+      <br>
+      <strong>Kiyoshi Murata</strong>
+      <br>
+      Google Inc.
+    </li>
+  <% end %>
+</ul>
+<a id="talks"></a>
+<h3>Agenda</h3>
+<% 2.times do %>
+  <h4>Sala 1</h4>
+  <ol class="talks-list">
+    <% 2.times do %>
+      <li class="break">
+        08h00 às 08h45
+        <br>
+        Credenciamento e cafézinho de boas vindas
+      </li>
+      <% 3.times do %>
+        <li>
+          <%= image_tag 'http://secure.gravatar.com/avatar/0bb24fca4c125f526d68fd47bdf8a864?s=420', :alt => 'Kiyoshi' %>
+          <br>
+          08h00 às 08h45
+          <br>
+          Bombando na Web com o Vraptor e o Play
+        </li>
+      <% end %>
+    <% end %>
+  </ol>
+<% end %>
+<h3>Patrocinadores</h3>
+<h4>Ouro</h4>
+<div class="gold-sponsors-list">
+  <% 4.times do %>
+    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% end %>
+</div>
+<h4>Prata</h4>
+<div class="silver-sponsors-list">
+  <% 5.times do %>
+    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% end %>
+</div>
+<h4>Bronze</h4>
+<div class="bronze-sponsors-list">
+  <% 7.times do %>
+    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% end %>
+</div>

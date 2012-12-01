@@ -227,7 +227,6 @@ DEPENDENCIES
   factory_girl-preload
   foreigner
   gravatar_image_tag
-  jquery-rails
   pg
   pry-rails
   rails (= 3.2.8)

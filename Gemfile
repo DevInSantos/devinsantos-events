@@ -6,7 +6,6 @@ gem 'foreigner'
 gem 'validators'
 gem 'rails_admin'
 gem 'devise'
-gem 'jquery-rails'
 gem 'gravatar_image_tag'
 
 group :assets do
