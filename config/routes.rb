@@ -9,4 +9,6 @@ Devinsantos::Application.routes.draw do
     resources :speakers, :only => :index
     resources :sponsors, :only => :index
   end
+
+  get "speaker/:id" => "speakers#speaker", as: :speaker
 end
