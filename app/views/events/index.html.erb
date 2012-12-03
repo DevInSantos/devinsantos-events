@@ -20,28 +20,15 @@
 </div>
 <h3>Palestrantes</h3>
 <ul class="speakers-list">
-  <%= render @speakers %>
+  <%= render @event.speakers %>
 </ul>
 <a id="talks"></a>
 <h3>Agenda</h3>
-<% 2.times do %>
-  <h4>Sala 1</h4>
+<% @event.rooms.each do | room | %>
+  <h4><%= room.name %></h4>
   <ol class="talks-list">
-    <% 2.times do %>
-      <li class="break">
-        08h00 às 08h45
-        <br>
-        Credenciamento e cafézinho de boas vindas
-      </li>
-      <% 3.times do %>
-        <li>
-          <%= gravatar_image_tag '13k@linhareta.net', alt: 'Kiyoshi' %>
-          <br>
-          08h00 às 08h45
-          <br>
-          Bombando na Web com o Vraptor e o Play
-        </li>
-      <% end %>
+    <% @track.each(room) do |t| %>
+      <%= t.print %>
     <% end %>
   </ol>
 <% end %>
