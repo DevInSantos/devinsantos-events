@@ -2,9 +2,7 @@ class Track
   include Enumerable
 
   def initialize(intervals = [], talks = [])
-    @list = []
-    intervals.each {|i| @list << i}
-    talks.each {|t| @list << t}
+    @list = intervals + talks
 
     @list.sort_by!(&:horary)
   end
