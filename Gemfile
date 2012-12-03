@@ -7,6 +7,7 @@ gem 'validators'
 gem 'rails_admin'
 gem 'devise'
 gem 'gravatar_image_tag'
+gem 'draper'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
