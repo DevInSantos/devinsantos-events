@@ -48,13 +48,13 @@ FactoryGirl.define do
 
   factory :cocento, :class => Sponsor do
     name "Cocento Tecnologia"
-    sponsorship_type "Ouro"
+    sponsorship_type SponsorshipType::GOLD
     logo_url "http://logo.com/logo.jpg"
   end
 
   factory :caelum, :class => Sponsor do
     name "Caelum"
-    sponsorship_type "Comunity"
+    sponsorship_type SponsorshipType::SILVER
     logo_url "http://logo.com/logo.jpg"
   end
 
