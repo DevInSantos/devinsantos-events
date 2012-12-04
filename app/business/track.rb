@@ -7,8 +7,11 @@ class Track
     @list.sort_by!(&:horary)
   end
 
-  def each(room)
-    filtered ||= @list.select { |track| track.for_this_room? room}
-    filtered.each { |item| yield item }
+  def each
+    @list.each { |item| yield item }
+  end
+
+  def for_room(room)
+    select { |track| track.for_this_room? room }.each { |item| yield item }
   end
 end

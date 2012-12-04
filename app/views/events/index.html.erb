@@ -27,7 +27,7 @@
 <% @event.rooms.each do | room | %>
   <h4><%= room.name %></h4>
   <ol class="talks-list">
-    <% @track.each(room) do |t| %>
+    <% @track.for_room(room) do |t| %>
       <%= t.print %>
     <% end %>
   </ol>
