@@ -64,6 +64,8 @@ GEM
     draper (0.18.0)
       actionpack (~> 3.2)
       activesupport (~> 3.2)
+    enumerate_it (1.0.1)
+      activesupport (>= 3.0.0)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -228,6 +230,7 @@ DEPENDENCIES
   capybara
   devise
   draper
+  enumerate_it
   factory_girl
   factory_girl-preload
   foreigner
