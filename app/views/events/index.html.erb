@@ -35,19 +35,19 @@
 <h3>Patrocinadores</h3>
 <h4>Ouro</h4>
 <div class="gold-sponsors-list">
-  <% 4.times do %>
-    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% @event.sponsors.gold.each do |sponsor| %>
+    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
   <% end %>
 </div>
 <h4>Prata</h4>
 <div class="silver-sponsors-list">
-  <% 5.times do %>
-    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% @event.sponsors.silver.each do |sponsor| %>
+    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
   <% end %>
 </div>
 <h4>Bronze</h4>
 <div class="bronze-sponsors-list">
-  <% 7.times do %>
-    <%= image_tag 'http://blog.locaweb.com.br/wp-content/uploads/2010/02/logo_caelum.jpg', :alt => 'Caelum' %>
+  <% @event.sponsors.bronze.each do |sponsor| %>
+    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
   <% end %>
 </div>
