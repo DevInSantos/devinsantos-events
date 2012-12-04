@@ -1,6 +1,4 @@
-require 'unit_helper'
-require 'app/business/track'
-require 'active_support/all'
+require 'spec_helper'
 
 describe Track do
 
