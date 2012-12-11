@@ -10,7 +10,7 @@ class SpeakersController < ApplicationController
   def speaker
     speaker = Speaker.find params[:id]
     respond_to do |format|
-      format.html { render "speaker", locals: {speaker: speaker} }
+      format.html { render "speaker", :locals => {:speaker => speaker} }
     end
   end
 end
