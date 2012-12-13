@@ -5,19 +5,22 @@
   <span class="headline-two">encontro de desenvolvedores</span>
   <span class="headline-three">da Baixada Santista</span>
 </p>
-<h2>5º DevInSantos</h2>
+<h2><%= @event.name %></h2>
+<div class="event-info">
+  <%= time_tag @event.date, l(@event.date, format: :event_html).html_safe, :class => 'event-info-date' %>
+  <div class="event-info-address">
+    <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+      <span itemprop="street-address"><%= @event.address %></span>,
+      <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
+    </address>
+    <%= link_to '(ver no mapa)', "http://maps.google.com.br/?q=#{@event.address}, Santos / SP", :target => '_blank' %>
+  </div>
+</div>
 <%= link_to 'javascript:void(0)', :class => 'btn-subscribe' do %>
   <b>Inscreva-se!</b>
   <br>
   <%= number_to_currency @event.price %>
 <% end %>
-<div class="event-info">
-  <%= time_tag @event.date, format: :event %>
-  <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-    <span itemprop="street-address"><%= @event.address %></span>,
-    <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
-  </address>
-</div>
 <h3>Palestrantes</h3>
 <ul class="speakers-list">
   <%= render @event.speakers %>

@@ -1,7 +1,8 @@
 .btn-subscribe {
-	@include border-radius(.4em);
+	@include border-radius(8px);
 	display: block;
 	padding: .5em;
+	margin-bottom: 1em;
 	background-color: #BB6038;
 	color: #FFF;
 	font-size: 1.5em;

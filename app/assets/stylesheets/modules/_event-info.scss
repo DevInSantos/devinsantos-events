@@ -1,0 +1,31 @@
+.event-info {
+	@include box-shadow(#BBB, 0, 5px, 8px);
+	@include border-radius(8px);
+	border: 1px solid #9A8572;
+	padding: 1em;
+	margin-bottom: 1.5em;
+	font-size: 1.1em;
+}
+
+.event-info-date {
+	@include inline-block;
+	min-height: 40px;
+	padding-left: 50px;
+	margin-bottom: 1em;
+	background-image: image-url("event-info-date-icon.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.event-info-address {
+	@include inline-block;
+	min-height: 40px;
+	padding-left: 50px;
+	background-image: image-url("event-info-address-icon.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.event-info-address address {
+	font-style: normal;
+}

@@ -10,3 +10,9 @@
 	*display: inline;
 	zoom: 1;
 }
+
+@mixin box-shadow($color, $hoffset, $voffset, $blur) {
+  -webkit-box-shadow: $color $hoffset $voffset $blur;
+  	 -moz-box-shadow: $color $hoffset $voffset $blur;
+  				box-shadow: $color $hoffset $voffset $blur;
+}
