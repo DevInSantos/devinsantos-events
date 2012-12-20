@@ -1,0 +1,37 @@
+.session-title {
+	position: relative;
+	background-color: #9A8572;
+	text-align: center;
+}
+
+.session-title-tab {
+	@include border-top-radius(8px);
+	@include inline-block;
+	border: 1px solid #695B51;
+	border-bottom: none;
+	margin-top: 10px;
+	padding: .5em .7em .3em;
+	background-color: #FFF;
+	font-size: 1.3em;
+}
+
+.session-title-l-triangle,
+.session-title-r-triangle {
+	position: absolute;
+	top: 0;
+	display: block;
+	height: 0;
+	width: 0;
+	border-width: 1.65em;
+	border-style: solid;
+}
+
+.session-title-l-triangle {
+	left: 0;
+	border-color: transparent transparent transparent #FFF;
+}
+
+.session-title-r-triangle {
+	right: 0;
+	border-color: transparent #FFF transparent transparent;
+}

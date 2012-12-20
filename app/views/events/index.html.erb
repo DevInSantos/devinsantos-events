@@ -21,12 +21,20 @@
   <br>
   <%= number_to_currency @event.price %>
 <% end %>
-<h3>Palestrantes</h3>
+<h3 class="session-title">
+  <span class="session-title-l-triangle"></span>
+  <span class="session-title-tab">Palestrantes</span>
+  <span class="session-title-r-triangle"></span>
+</h3>
 <ul class="speakers-list">
   <%= render @event.speakers %>
 </ul>
 <a id="talks"></a>
-<h3>Agenda</h3>
+<h3 class="session-title">
+  <span class="session-title-l-triangle"></span>
+  <span class="session-title-tab">Agenda</span>
+  <span class="session-title-r-triangle"></span>
+</h3>
 <% @event.rooms.each do | room | %>
   <h4><%= room.name %></h4>
   <ol class="talks-list">
@@ -35,7 +43,11 @@
     <% end %>
   </ol>
 <% end %>
-<h3>Patrocinadores</h3>
+<h3 class="session-title">
+  <span class="session-title-l-triangle"></span>
+  <span class="session-title-tab">Patrocinadores</span>
+  <span class="session-title-r-triangle"></span>
+</h3>
 <h4>Ouro</h4>
 <div class="gold-sponsors-list">
   <% @event.sponsors.gold.each do |sponsor| %>
