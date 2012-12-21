@@ -1,0 +1,21 @@
+.speakers-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.speakers-list li {
+	@include inline-block;
+	margin-bottom: 1.4em;
+	width: 146px;
+	text-align: center;
+	font-size: .75em;
+	line-height: 1.4em;
+}
+
+.speakers-list .speaker-avatar {
+	margin-bottom: .6em;
+}
+
+.speakers-list-name {
+	font-size: 1.3em;
+}

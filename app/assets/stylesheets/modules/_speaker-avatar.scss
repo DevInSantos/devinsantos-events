@@ -1,0 +1,12 @@
+.speaker-avatar {
+	@include box-shadow(#DDD, 0, 0, 5px);
+	@include border-radius(60px);
+	@include inline-block;
+	border: 1px solid #DDD;
+	padding: 6px;
+	background-color: #FFF;
+}
+
+.speaker-avatar img {
+	@include border-radius(60px);
+}
