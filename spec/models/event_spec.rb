@@ -7,7 +7,7 @@ describe Event do
   it { should validate_presence_of :place }
   it { should validate_presence_of :url }
   it { should have_and_belong_to_many :speakers }
-  it { should have_many(:rooms).dependent(:destroy) }
+  it { should have_many(:rooms).dependent(:destroy).order(:priority) }
   it { should have_many(:sponsors).dependent(:destroy) }
   it "name should be unique" do
     event = FactoryGirl.create(:devinsantos)

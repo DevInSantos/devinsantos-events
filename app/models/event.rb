@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   attr_accessible :address, :date, :description, :name, :place, :url, :price
 
   has_and_belongs_to_many :speakers
-  has_many :rooms, :dependent => :destroy
+  has_many :rooms, :dependent => :destroy, :order => :priority
   has_many :sponsors, :dependent => :destroy
   has_many :intervals, :dependent => :destroy
   has_many :talks, :through => :speakers

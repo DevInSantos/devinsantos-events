@@ -7,7 +7,7 @@ describe Room do
 
   describe "mass assignment" do
     context "allowerd attributes" do
-      [:name, :event_id].each do |attribute|
+      [:name, :priority, :event_id].each do |attribute|
         it { should allow_mass_assignment_of attribute }
       end
     end
