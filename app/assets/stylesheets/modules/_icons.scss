@@ -1,0 +1,15 @@
+.icon {
+	@include inline-block;
+	background-repeat: no-repeat;
+	line-height: 0;
+	vertical-align: bottom;
+}
+
+.icon-32 {
+	width: 32px;
+	height: 32px;
+}
+
+.icon-interval {
+	background-image: image-url("icons/interval.png");
+}

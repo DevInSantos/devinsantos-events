@@ -198,6 +198,7 @@ pt-BR:
       long: ! '%A, %d de %B de %Y, %H:%M h'
       short: ! '%d/%m, %H:%M h'
       event_html: ! '%A<br> %d / %B / %Y'
+      talk: ! '%Hh%M'
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:

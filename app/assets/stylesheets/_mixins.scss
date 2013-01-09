@@ -25,3 +25,9 @@
   	 -moz-box-shadow: $color $hoffset $voffset $blur;
   				box-shadow: $color $hoffset $voffset $blur;
 }
+
+@mixin box-shadow-none {
+  -webkit-box-shadow: none;
+  	 -moz-box-shadow: none;
+  				box-shadow: none;
+}

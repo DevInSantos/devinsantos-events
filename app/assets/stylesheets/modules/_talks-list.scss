@@ -1,0 +1,27 @@
+.talks-list {
+	list-style: none;
+	margin-bottom: 2em;
+	padding-left: 0;
+}
+
+.talks-list__talk {
+	margin-bottom: 1.25em;
+}
+
+.talks-list__talk .speaker-avatar {
+	float: left;
+}
+
+.talks-list__talk__info {
+	margin-left: 60px;
+}
+
+.talks-list__interval {
+	@include border-radius(8px);
+	margin-bottom: 1.25em;
+	padding: .65em;
+	background-color: #666;
+	line-height: 1.5em;
+	text-align: center;
+	color: #FFF;
+}

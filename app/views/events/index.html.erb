@@ -36,7 +36,7 @@
   <span class="session-title-r-triangle"></span>
 </h3>
 <% @event.rooms.each do | room | %>
-  <h4><%= room.name %></h4>
+  <h4 class="session-subtitle"><%= room.name %></h4>
   <ol class="talks-list">
     <% @track.for_room(room) do |t| %>
       <%= t.print %>
