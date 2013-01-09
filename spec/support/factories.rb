@@ -1,6 +1,6 @@
 # encoding: utf-8
 FactoryGirl.define do
-  factory :devinsantos, :class => Event do
+  factory :event, :class => Event do
     name "DevInSantos"
     place "Unimonte"
     address "Rua Comendador Martins, 52, Vila Mathias, Santos / SP"
@@ -39,14 +39,21 @@ FactoryGirl.define do
     url "http://meetup.com/devinsantos/events/81805942"
   end
 
-  factory :bruno, :class => Speaker do
+  factory :speaker, :class => Speaker do
     name "Bruno Costa"
     email "brunoadacosta@gmail.com"
     description "Señor Desenvolvedor"
     company "Cocento Tecnologia"
   end
 
-  factory :cocento, :class => Sponsor do
+  factory :leandro, :class => Speaker do
+    name "Leandro Costa"
+    email "leandroadacosta@gmail.com"
+    description "Front-end designer"
+    company "Desocupado"
+  end
+
+  factory :sponsor, :class => Sponsor do
     name "Cocento Tecnologia"
     sponsorship_type SponsorshipType::GOLD
     logo_url "http://logo.com/logo.jpg"
@@ -58,8 +65,32 @@ FactoryGirl.define do
     logo_url "http://logo.com/logo.jpg"
   end
 
-  factory :sala1, :class => Room do
+  factory :room, :class => Room do
     name "Sala 1"
+    priority 1
     association :event, :factory => :devinsantos
+  end
+
+  factory :sala2, :class => Room do
+    name "Sala 2"
+    priority 2
+    association :event, :factory => :devinsantos
+  end
+
+  factory :talk, :class => Talk do
+    name "Ruby on Rails"
+    description "Falando sobre Ruby on Rails"
+    link "http://speakerdeck.com/rails"
+    horary DateTime.new(2012, 10, 11, 9, 00)
+    association :speaker, :factory => :bruno
+    association :room, :factory => :sala1
+  end
+
+  preload do
+    factory(:devinsantos) { create(:event) }
+    factory(:bruno) { create(:speaker) }
+    factory(:sala1) { create(:room, :event => events(:devinsantos)) }
+    factory(:cocento) { create(:sponsor) }
+    factory(:ruby_on_rails) { create(:talk, :speaker => speakers(:bruno), :room => rooms(:sala1)) }
   end
 end

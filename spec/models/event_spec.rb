@@ -10,7 +10,7 @@ describe Event do
   it { should have_many(:rooms).dependent(:destroy).order(:priority) }
   it { should have_many(:sponsors).dependent(:destroy) }
   it "name should be unique" do
-    event = FactoryGirl.create(:devinsantos)
+    event = events(:devinsantos)
     expect(event).to validate_uniqueness_of(:name)
   end
   describe "mass assignment" do
@@ -23,7 +23,7 @@ describe Event do
 
   describe "scopes" do
     it "should return published" do
-      devinsantos = FactoryGirl.create :devinsantos
+      devinsantos = events(:devinsantos)
       next_devinsantos = FactoryGirl.create :next_devinsantos
 
       events = Event.published

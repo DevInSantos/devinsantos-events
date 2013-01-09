@@ -13,8 +13,8 @@ describe Sponsor do
 
   describe "scopes" do
     it "should return a sponsor an event" do
-      event = FactoryGirl.create :devinsantos
-      cocento = FactoryGirl.create :cocento, :event_id => event.id
+      event = events(:devinsantos)
+      cocento = FactoryGirl.create :sponsor, :event_id => event.id
       caelum = FactoryGirl.create :caelum
 
       sponsors = Sponsor.sponsoring event.id
