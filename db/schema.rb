@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20130108234459) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "intervals", ["event_id"], :name => "index_breaks_on_event_id"
+
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
@@ -122,6 +124,8 @@ ActiveRecord::Schema.define(:version => 20130108234459) do
 
   add_foreign_key "events_speakers", "events", :name => "events_speakers_event_id_fk"
   add_foreign_key "events_speakers", "speakers", :name => "events_speakers_speaker_id_fk"
+
+  add_foreign_key "intervals", "events", :name => "breaks_event_id_fk"
 
   add_foreign_key "rooms", "events", :name => "rooms_event_id_fk"
 
