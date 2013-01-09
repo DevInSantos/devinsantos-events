@@ -48,21 +48,21 @@
   <span class="session-title-tab">Patrocinadores</span>
   <span class="session-title-r-triangle"></span>
 </h3>
-<h4>Ouro</h4>
-<div class="gold-sponsors-list">
+<h4 class="session-subtitle">Ouro</h4>
+<ul class="sponsors-list sponsors-list--gold">
   <% @event.sponsors.gold.each do |sponsor| %>
-    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
+    <li><%= image_tag sponsor.logo_url, :width => 136, :alt => sponsor.name %></li>
   <% end %>
-</div>
-<h4>Prata</h4>
-<div class="silver-sponsors-list">
+</ul>
+<h4 class="session-subtitle">Prata</h4>
+<ul class="sponsors-list sponsors-list--silver">
   <% @event.sponsors.silver.each do |sponsor| %>
-    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
+    <li><%= image_tag sponsor.logo_url, :width => 83, :alt => sponsor.name %></li>
   <% end %>
-</div>
-<h4>Bronze</h4>
-<div class="bronze-sponsors-list">
+</ul>
+<h4 class="session-subtitle">Bronze</h4>
+<ul class="sponsors-list sponsors-list--bronze">
   <% @event.sponsors.bronze.each do |sponsor| %>
-    <%= image_tag sponsor.logo_url, :alt => sponsor.name %>
+    <li><%= image_tag sponsor.logo_url, :width => 56, :alt => sponsor.name %></li>
   <% end %>
-</div>
+</ul>
