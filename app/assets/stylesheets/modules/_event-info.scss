@@ -7,7 +7,7 @@
 	font-size: 1.1em;
 }
 
-.event-info-date {
+.event-info__date {
 	@include inline-block;
 	min-height: 40px;
 	padding-left: 50px;
@@ -17,7 +17,7 @@
 	background-position: top left;
 }
 
-.event-info-address {
+.event-info__address {
 	@include inline-block;
 	min-height: 40px;
 	padding-left: 50px;
@@ -26,6 +26,6 @@
 	background-position: top left;
 }
 
-.event-info-address address {
+.event-info__address address {
 	font-style: normal;
 }

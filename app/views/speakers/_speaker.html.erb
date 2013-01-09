@@ -1,7 +1,7 @@
 <li>
   <div class="speaker-avatar"><%= gravatar_image_tag speaker.email, alt: speaker.name %></div>
   <br>
-  <strong class="speakers-list-name"><%= speaker.name %></strong>
+  <strong class="speakers-list__name"><%= speaker.name %></strong>
   <br>
   <%= link_to "@#{speaker.twitter}", "http://twitter.com/#{speaker.twitter}", :target => '_blank' %>
   <br>

@@ -10,14 +10,14 @@
 	vertical-align: middle;
 }
 
-.sponsors-list--gold li:nth-child(2n+1) {
+.sponsors-list__gold li:nth-child(2n+1) {
 	margin-left: 0;
 }
 
-.sponsors-list--silver li:nth-child(3n+1) {
+.sponsors-list__silver li:nth-child(3n+1) {
 	margin-left: 0;
 }
 
-.sponsors-list--bronze li:nth-child(4n+1) {
+.sponsors-list__bronze li:nth-child(4n+1) {
 	margin-left: 0;
 }
