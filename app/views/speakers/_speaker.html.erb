@@ -1,5 +1,5 @@
 <li>
-  <div class="speaker-avatar"><%= gravatar_image_tag speaker.email, alt: speaker.name %></div>
+  <div class="speaker-avatar"><%= gravatar_image_tag speaker.email, :gravatar => { :size => 80 }, alt: speaker.name %></div>
   <br>
   <strong class="speakers-list__name"><%= speaker.name %></strong>
   <br>
