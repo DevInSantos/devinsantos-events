@@ -1,68 +1,70 @@
-<%= link_to 'Ver programação', '#talks', :class => 'btn-view-talks' %>
-<h1 class="logo"><%= link_to image_tag('devinsantos-logo.png', :alt => 'DevInSantos'), root_path %></h1>
-<p class="headline">
-  <span class="headline__one">O MAIOR</span>
-  <span class="headline__two">encontro de desenvolvedores</span>
-  <span class="headline__three">da Baixada Santista</span>
-</p>
-<h2><%= @event.name %></h2>
-<div class="event-info">
-  <%= time_tag @event.date, l(@event.date, format: :event_html).html_safe, :class => 'event-info__date' %>
-  <div class="event-info__address">
-    <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-      <span itemprop="street-address"><%= @event.address %></span>,
-      <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
-    </address>
-    <%= link_to '(ver no mapa)', "http://maps.google.com.br/?q=#{@event.address}, Santos / SP", :target => '_blank' %>
+<div class="container">
+  <%= link_to 'Ver programação', '#talks', :class => 'btn-view-talks' %>
+  <h1 class="logo"><%= link_to image_tag('devinsantos-logo.png', :alt => 'DevInSantos'), root_path %></h1>
+  <p class="headline">
+    <span class="headline__one">O MAIOR</span>
+    <span class="headline__two">encontro de desenvolvedores</span>
+    <span class="headline__three">da Baixada Santista</span>
+  </p>
+  <h2><%= @event.name %></h2>
+  <div class="event-info">
+    <%= time_tag @event.date, l(@event.date, format: :event_html).html_safe, :class => 'event-info__date' %>
+    <div class="event-info__address">
+      <address itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+        <span itemprop="street-address"><%= @event.address %></span>,
+        <span itemprop="locality">Santos</span> / <span itemprop="region">SP</span>
+      </address>
+      <%= link_to '(ver no mapa)', "http://maps.google.com.br/?q=#{@event.address}, Santos / SP", :target => '_blank' %>
+    </div>
   </div>
-</div>
-<%= link_to 'javascript:void(0)', :class => 'btn-subscribe' do %>
-  <b>Inscreva-se!</b>
-  <br>
-  <%= number_to_currency @event.price %>
-<% end %>
-<h3 class="session-title">
-  <span class="session-title__l-triangle"></span>
-  <span class="session-title__tab">Palestrantes</span>
-  <span class="session-title__r-triangle"></span>
-</h3>
-<ul class="speakers-list">
-  <%= render @event.speakers %>
-</ul>
-<a id="talks"></a>
-<h3 class="session-title">
-  <span class="session-title__l-triangle"></span>
-  <span class="session-title__tab">Agenda</span>
-  <span class="session-title__r-triangle"></span>
-</h3>
-<% @event.rooms.each do | room | %>
-  <h4 class="session-subtitle"><%= room.name %></h4>
-  <ol class="talks-list">
-    <% @track.for_room(room) do |t| %>
-      <%= t.print %>
+  <%= link_to 'javascript:void(0)', :class => 'btn-subscribe' do %>
+    <b>Inscreva-se!</b>
+    <br>
+    <%= number_to_currency @event.price %>
+  <% end %>
+  <h3 class="session-title">
+    <span class="session-title__l-triangle"></span>
+    <span class="session-title__tab">Palestrantes</span>
+    <span class="session-title__r-triangle"></span>
+  </h3>
+  <ul class="speakers-list">
+    <%= render @event.speakers %>
+  </ul>
+  <a id="talks"></a>
+  <h3 class="session-title">
+    <span class="session-title__l-triangle"></span>
+    <span class="session-title__tab">Agenda</span>
+    <span class="session-title__r-triangle"></span>
+  </h3>
+  <% @event.rooms.each do | room | %>
+    <h4 class="session-subtitle"><%= room.name %></h4>
+    <ol class="talks-list">
+      <% @track.for_room(room) do |t| %>
+        <%= t.print %>
+      <% end %>
+    </ol>
+  <% end %>
+  <h3 class="session-title">
+    <span class="session-title__l-triangle"></span>
+    <span class="session-title__tab">Patrocinadores</span>
+    <span class="session-title__r-triangle"></span>
+  </h3>
+  <h4 class="session-subtitle">Ouro</h4>
+  <ul class="sponsors-list sponsors-list__gold">
+    <% @event.sponsors.gold.each do |sponsor| %>
+      <li><%= image_tag sponsor.logo_url, :width => 136, :alt => sponsor.name %></li>
     <% end %>
-  </ol>
-<% end %>
-<h3 class="session-title">
-  <span class="session-title__l-triangle"></span>
-  <span class="session-title__tab">Patrocinadores</span>
-  <span class="session-title__r-triangle"></span>
-</h3>
-<h4 class="session-subtitle">Ouro</h4>
-<ul class="sponsors-list sponsors-list__gold">
-  <% @event.sponsors.gold.each do |sponsor| %>
-    <li><%= image_tag sponsor.logo_url, :width => 136, :alt => sponsor.name %></li>
-  <% end %>
-</ul>
-<h4 class="session-subtitle">Prata</h4>
-<ul class="sponsors-list sponsors-list__silver">
-  <% @event.sponsors.silver.each do |sponsor| %>
-    <li><%= image_tag sponsor.logo_url, :width => 83, :alt => sponsor.name %></li>
-  <% end %>
-</ul>
-<h4 class="session-subtitle">Bronze</h4>
-<ul class="sponsors-list sponsors-list__bronze">
-  <% @event.sponsors.bronze.each do |sponsor| %>
-    <li><%= image_tag sponsor.logo_url, :width => 56, :alt => sponsor.name %></li>
-  <% end %>
-</ul>
+  </ul>
+  <h4 class="session-subtitle">Prata</h4>
+  <ul class="sponsors-list sponsors-list__silver">
+    <% @event.sponsors.silver.each do |sponsor| %>
+      <li><%= image_tag sponsor.logo_url, :width => 83, :alt => sponsor.name %></li>
+    <% end %>
+  </ul>
+  <h4 class="session-subtitle">Bronze</h4>
+  <ul class="sponsors-list sponsors-list__bronze">
+    <% @event.sponsors.bronze.each do |sponsor| %>
+      <li><%= image_tag sponsor.logo_url, :width => 56, :alt => sponsor.name %></li>
+    <% end %>
+  </ul>
+</div>

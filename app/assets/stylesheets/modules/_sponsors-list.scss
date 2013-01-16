@@ -5,19 +5,61 @@
 
 .sponsors-list li {
 	@include inline-block;
-	margin-left: 1.25em;
 	margin-bottom: 1.25em;
 	vertical-align: middle;
+	text-align: center;
+	
+	@media screen and (min-width:650px) {
+		margin-bottom: 2em;
+	}
 }
 
-.sponsors-list__gold li:nth-child(2n+1) {
-	margin-left: 0;
+.sponsors-list li img {
+	width: 80%;
+	
+	@media screen and (min-width:500px) {
+		width: 70%;
+	}
 }
 
-.sponsors-list__silver li:nth-child(3n+1) {
-	margin-left: 0;
+/*
+	Patrocinador Ouro
+*/
+.sponsors-list__gold li {
+	width: 99%;
+	
+	@media screen and (min-width:500px) {
+		width: 49%;
+	}	
 }
 
-.sponsors-list__bronze li:nth-child(4n+1) {
-	margin-left: 0;
+/*
+	Patrocinador Prata
+*/
+.sponsors-list__silver li {
+	width: 49%;
+	
+	@media screen and (min-width:500px) {
+		width: 32%;
+	}
+	
+	@media screen and (min-width:650px) {
+		width: 24%;
+	}
 }
+
+/*
+	Patrocinador Bronze
+*/
+.sponsors-list__bronze li {
+	width: 32%;
+	
+	@media screen and (min-width:500px) {
+		width: 24%;
+	}
+	
+	@media screen and (min-width:650px) {
+		width: 19%;
+	}
+}
+
