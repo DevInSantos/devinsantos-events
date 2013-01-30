@@ -1,6 +1,8 @@
-class TalkDecorator < Draper::Base
+class TalkDecorator < Draper::Decorator
+  include Draper::LazyHelpers
+
   decorates :talk
-  allows :horary, :for_this_room?
+  delegate :horary, :for_this_room?
 
   def print
     h.render model

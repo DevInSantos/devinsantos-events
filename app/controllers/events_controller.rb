@@ -5,7 +5,7 @@ class EventsController < ApplicationController
       format.json { render :json => Event.limit(5) }
       format.html do
         @event = Event.current
-        @track = Track.new(IntervalDecorator.decorate(@event.intervals).to_ary, TalkDecorator.decorate(@event.talks).to_ary)
+        @track = Track.new(IntervalDecorator.decorate_collection(@event.intervals), TalkDecorator.decorate_collection(@event.talks))
 
         render :index
       end

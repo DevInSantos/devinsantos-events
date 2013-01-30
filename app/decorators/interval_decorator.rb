@@ -1,6 +1,8 @@
-class IntervalDecorator < Draper::Base
+class IntervalDecorator < Draper::Decorator
+  include Draper::LazyHelpers
+
   decorates :interval
-  allows :horary, :for_this_room?
+  delegate :horary, :for_this_room?
 
   def print
     h.render model
