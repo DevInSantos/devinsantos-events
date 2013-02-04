@@ -3,12 +3,7 @@
 
 
 [![BuildStatus](https://travis-ci.org/DevInSantos/DevInSantos-events.png)](https://travis-ci.org/DevInSantos/DevInSantos-events.png)
-<<<<<<< HEAD
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/DevInSantos/DevInSantos-events)
-=======
 [![Code Climate](https://codeclimate.com/github/DevInSantos/DevInSantos-events.png)](https://codeclimate.com/github/DevInSantos/DevInSantos-events)
->>>>>>> adding codeclimate
-
 
 ##Development
 ###Database.yml
