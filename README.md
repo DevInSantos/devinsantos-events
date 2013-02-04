@@ -3,9 +3,10 @@
 
 
 [![BuildStatus](https://travis-ci.org/DevInSantos/DevInSantos-events.png)](https://travis-ci.org/DevInSantos/DevInSantos-events.png)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/DevInSantos/DevInSantos-events)
 
 
-##Development 
+##Development
 ###Database.yml
 ```bash
  cp config/database.example.yml config/database.yml
