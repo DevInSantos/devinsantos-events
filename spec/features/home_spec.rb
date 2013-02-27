@@ -7,6 +7,10 @@ feature "Home" do
   let(:bruno) { speakers(:bruno) }
   let(:ruby_on_rails) { talks(:ruby_on_rails) }
 
+  before do
+     devinsantos.speakers << bruno
+     devinsantos.save!
+  end
 
   scenario "Visit home" do
     visit root_path
@@ -20,8 +24,8 @@ feature "Home" do
     end
 
     within find('ul.speakers-list') do
-      # expect(page).to have_content bruno.name
-      # expect(page).to have_content bruno.company
+      expect(page).to have_content bruno.name
+      expect(page).to have_content bruno.company
       expect(page).to have_content bruno.twitter
     end
   end

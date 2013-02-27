@@ -43,6 +43,7 @@ FactoryGirl.define do
     name "Bruno Costa"
     email "brunoadacosta@gmail.com"
     description "Señor Desenvolvedor"
+    twitter "brunoadacosta"
     company "Cocento Tecnologia"
   end
 
@@ -50,6 +51,7 @@ FactoryGirl.define do
     name "Leandro Costa"
     email "leandroadacosta@gmail.com"
     description "Front-end designer"
+    twitter "leandroadacosta"
     company "Desocupado"
   end
 
