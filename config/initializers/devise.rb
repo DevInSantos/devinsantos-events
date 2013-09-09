@@ -5,7 +5,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "contato@devinsantos.com.br"
-  if Rails.production?
+  if Rails.env.production?
     secret = ENV["DEVISE_SECRET"]
   else
     secret = '41f257813da2d6044d40fc4b327b415a052d6bbc376b00d1e79d730cbdbbe8f0724f15daea995a6ea4d2616e43fb452d8a6e1cde70fda0a6036da35737d44bb1'
