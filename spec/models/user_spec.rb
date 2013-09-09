@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  describe "mass assignment" do
-    context "allowed attributes" do
-      [:email, :password, :password_confirmation, :remember_me].each do |attributes|
-        it { should allow_mass_assignment_of attributes }
-      end
-    end
-  end
+  it { should validate_presence_of :email }
+  it { should validate_presence_of :password }
+  it { should validate_presence_of :password_confirmation }
 end

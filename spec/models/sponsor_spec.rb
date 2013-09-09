@@ -3,14 +3,6 @@ require 'spec_helper'
 describe Sponsor do
   it { should belong_to :event }
 
-  describe "mass assignment" do
-    context "allowerd attributes" do
-      [:logo_url, :name, :sponsorship_type, :event_id].each do |attribute|
-        it { should allow_mass_assignment_of attribute }
-      end
-    end
-  end
-
   describe "scopes" do
     it "should return a sponsor an event" do
       event = events(:devinsantos)

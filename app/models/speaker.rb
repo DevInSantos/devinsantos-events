@@ -1,6 +1,4 @@
 class Speaker < ActiveRecord::Base
-  attr_accessible :company, :description, :name, :email, :twitter
-
   has_and_belongs_to_many :events
   has_many :talks, :dependent => :destroy
 

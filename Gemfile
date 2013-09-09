@@ -1,6 +1,7 @@
+ruby "2.0.0"
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 gem 'pg'
 gem 'foreigner'
 gem 'validators'
@@ -11,8 +12,8 @@ gem 'draper'
 gem 'enumerate_it'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
 group :development, :test do
