@@ -16,3 +16,5 @@
 /log/*.log
 /tmp
 config/database.yml
+
+.ruby-version
