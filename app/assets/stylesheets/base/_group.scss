@@ -1,13 +1,5 @@
-.group:before,
 .group:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.group:after {
-    clear: both;
-}
-
-.group {
-    *zoom: 1;
+	content:"";
+	display:table;
+	clear:both;
 }

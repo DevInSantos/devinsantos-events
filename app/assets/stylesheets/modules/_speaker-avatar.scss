@@ -4,6 +4,11 @@
 	background-color: #FFF;
 }
 
+.speaker-avatar:hover {
+	@include box-shadow(#333, 0, 0, 12px);
+	opacity: 0.8;
+}
+
 .speaker-avatar,
 .speaker-avatar img {
 	width: 60px;

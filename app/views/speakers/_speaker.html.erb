@@ -1,5 +1,5 @@
 <li>
-  <div class="speaker-avatar"><%= gravatar_image_tag speaker.email, :gravatar => { :size => 220 }, alt: speaker.name %></div>
+  <a data-toggle="modal" href="#speaker<%= speaker.id %>" class="speaker-avatar speaker-avatar__link" title="Clique e leia a biografia do <%= speaker.name %>"><%= gravatar_image_tag speaker.email, :gravatar => { :size => 220 }, alt: speaker.name %></a>
   <br>
   <strong class="speakers-list__name"><%= speaker.name %></strong>
   <br>
@@ -7,3 +7,16 @@
   <br>
   <span class="is-smooth-text"><%= speaker.company %></span>
 </li>
+<div class="modal" id="speaker<%= speaker.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="modal__close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= speaker.name %> - <span class="is-smooth-text"><%= speaker.company %></span></h4>
+      </div>
+      <div class="modal-body">
+        <%= speaker.description %>
+      </div>
+    </div>
+  </div>
+</div>
