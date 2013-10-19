@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_and_belongs_to_many :speakers
+  has_and_belongs_to_many :speakers, -> { order(:name) }
   has_many :rooms, -> { order(:priority) }, :dependent => :destroy
   has_many :sponsors, :dependent => :destroy
   has_many :intervals, :dependent => :destroy
