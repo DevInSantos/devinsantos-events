@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :rooms, -> { order(:priority) }, :dependent => :destroy
   has_many :sponsors, :dependent => :destroy
   has_many :intervals, :dependent => :destroy
-  has_many :talks, :through => :speakers
+  has_many :talks, :through => :speakers, :autosave => false
 
   validates_presence_of :name, :date, :place, :address, :url
   validates_uniqueness_of :name
