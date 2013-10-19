@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
 
   default_scope -> { order("created_at desc") }
 
-  scope :published, -> { where(Event.arel_table[:published_at].not_eq(nil)) }
+  scope :published, -> { where(Event.arel_table[:published_at].not_eq(nil)).includes(:intervals, :talks) }
 
   def self.current
     published.first
