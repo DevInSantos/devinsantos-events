@@ -1,14 +1,40 @@
 .btn-subscribe {
 	@include border-radius(8px);
 	display: block;
-	padding: .5em;
+	padding: 1em;
 	margin-bottom: 1em;
 	background-color: #BB6038;
+	background-image: linear-gradient(to bottom, #EF7B49, #BB6038);
 	color: #FFF;
 	font-size: 1.5em;
 	text-align: center;
+	vertical-align: top;
+}
+
+.btn-subscribe:hover {
+	background-color: #EF7B49;
+	background-image: linear-gradient(to bottom, #FF8C6C, #EF7B49);
 }
 
 .btn-subscribe b {
 	font-size: 1.3333em;
+}
+
+.btn-subscribe__line-through {
+	display: block;
+	margin-top: em(20px);
+	font-size: 0.7em;
+}
+
+@media screen and (min-width:600px) {
+	.btn-subscribe--center .btn-subscribe {
+		display: block;
+		margin: em(20px) auto;
+		width: 380px;
+	}
+	
+	.btn-subscribe {
+		display: inline-block;
+		width: 40%;
+	}
 }

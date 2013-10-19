@@ -1,5 +1,4 @@
 .event-info {
-	@include box-shadow(#BBB, 0, 5px, 8px);
 	@include border-radius(8px);
 	border: 1px solid #9A8572;
 	padding: 1em;
@@ -15,6 +14,7 @@
 	background-image: image-url("event-info-date-icon.png");
 	background-repeat: no-repeat;
 	background-position: top left;
+	vertical-align: top;
 }
 
 .event-info__address {
@@ -24,8 +24,17 @@
 	background-image: image-url("event-info-address-icon.png");
 	background-repeat: no-repeat;
 	background-position: top left;
+	vertical-align: top;
 }
 
 .event-info__address address {
 	font-style: normal;
+}
+
+@media screen and (min-width:600px) {
+	.event-info {
+		display: inline-block;
+		margin-left: 3%;
+		width: 56%;
+	}
 }

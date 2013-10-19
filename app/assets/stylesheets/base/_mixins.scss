@@ -31,3 +31,34 @@
   	 -moz-box-shadow: none;
   				box-shadow: none;
 }
+
+// returns unitless number
+@function remove-unit($number) {
+	$unit: unit($number);
+	$one: 1;
+	
+	@if $unit == 'px' { $one: 1px; }
+	@if $unit == 'em' { $one: 1em; }
+	@if $unit == '%' { $one: 1%; }
+	
+	@return $number / $one;
+}
+
+// returns flexible value
+// returns 'em' by default, accepts '%' as format
+@function flex($target, $context: 16, $unit: 'em') {
+	$size: remove-unit($target) / remove-unit($context);
+	
+	@if $unit == 'em' { @return #{$size}em; }
+	@if $unit == '%' { @return percentage($size); }
+}
+
+// alias to 'flex' function, using '%' as format
+@function perc($target, $context: 16) {
+	@return flex($target, $context, '%');
+}
+
+// alias to 'flex' function, using '%' as format
+@function em($target, $context: 16) {
+	@return flex($target, $context, 'em');
+}

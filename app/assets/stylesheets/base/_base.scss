@@ -1,0 +1,33 @@
+* {
+	-webkit-box-sizing: border-box;
+		 -moz-box-sizing: border-box;
+					box-sizing: border-box;
+}
+
+body {
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: 'Helvetica Neue';
+	font-size: 100%;
+	color: #524640;
+}
+
+a {
+	color: #C4501F;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 2em;
+	text-align: center;
+}
+
+@media screen and (min-width:940px) {
+	body {
+		padding: 0;
+	}
+	
+	h2 {
+		margin-bottom: 1em;
+	}
+}

@@ -6,3 +6,9 @@
 	line-height: 2em;
 	text-align: center;
 }
+
+@media screen and (min-width:600px) {
+	.session-subtitle {
+		margin-bottom: 1.5em;
+	}
+}

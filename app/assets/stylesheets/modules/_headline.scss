@@ -25,3 +25,11 @@
 	font-weight: bold;
 	font-size: 1.9em;
 }
+
+@media screen and (min-width:600px) {
+	.headline {
+		display: inline-block;
+		margin-left: 3%;
+		width: 56%;
+	}
+}

@@ -1,2 +1,1 @@
-//= require libs/jquery
-//= require_tree ./libs
+//= require ./libs/hide_addrbar

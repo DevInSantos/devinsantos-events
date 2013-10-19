@@ -1,3 +1,11 @@
 .logo img {
 	width: 100%;
 }
+
+@media screen and (min-width:600px) {
+	.logo {
+		display: inline-block;
+		width: 40%;
+		vertical-align: top;
+	}
+}

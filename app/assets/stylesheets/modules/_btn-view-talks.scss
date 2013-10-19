@@ -1,5 +1,12 @@
 .btn-view-talks {
 	display: block;
+	margin-top: em(10px);
 	font-size: 1.5em;
 	text-align: center;
+}
+
+@media screen and (min-width:800px) {
+	.btn-view-talks {
+		display: none;
+	}
 }

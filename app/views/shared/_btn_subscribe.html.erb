@@ -1,0 +1,7 @@
+<%= link_to 'javascript:void(0)', :onclick => "ga('send', 'event', 'btn_subscribe', 'click');", :class => 'btn-subscribe' do %>
+  <b>Inscreva-se!</b>
+  <br>
+  <%= number_to_currency @event.price %> até 31/10
+  <br>
+  <span class="btn-subscribe__line-through">2º lote R$ 90,00</span>
+<% end %>

@@ -1,13 +1,28 @@
 .speaker-avatar {
-	@include box-shadow(#BBB, 0, 0, 3px);
+	@include box-shadow(#AAA, 0, 0, 3px);
 	@include inline-block;
-	width: 80px;
-	height: 80px;
-	border: 6px solid #FFF;
 	background-color: #FFF;
 }
 
 .speaker-avatar,
 .speaker-avatar img {
+	width: 60px;
+	height: 60px;
 	@include border-radius(50%);
+}
+
+@media screen and (min-width:600px) {
+	.speaker-avatar,
+	.speaker-avatar img {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+@media screen and (min-width:800px) {
+	.speaker-avatar,
+	.speaker-avatar img {
+		width: 100px;
+		height: 100px;
+	}
 }

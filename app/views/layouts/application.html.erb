@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="pt" dir="ltr"> <!--<![endif]-->
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
+    <title><%= @event.try(:name) || 'DevInSantos' %> - O maior encontro de desenvolvedores da Baixada Santista</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>DevInSantos</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="O DevInSantos, grupo de desenvolvedores de software em Santos, reúne profissionais e empreendedores na área de tecnologia da Baixada Santista.">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <%= stylesheet_link_tag "application", :media => "all" %>
     <%= csrf_meta_tags %>
+    <!--[if lte IE 8]>
+		  <%= javascript_include_tag "ie/html5_shiv" %>
+		<![endif]-->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+		<%= favicon_link_tag 'favicon.png', :rel => 'icon shortcut', :type => 'image/png' %>
   </head>
   <body>
     <%= yield %>
-
-    <%= javascript_include_tag "application" %>
+    <p class="footer">
+      Organizadores <a href="mailto:brunoadacosta@gmail.com">Bruno Costa</a> e <a href="mailto:leandroadacosta@gmail.com">Leandro Costa</a> - Fotos dos encontros no <a href="https://www.facebook.com/developersinsantos" target="_blank" title="Facebook DevInSantos">Facebook</a>.
+    </p>
+    <!--[if lte IE 8]>
+		  <%= javascript_include_tag "ie/respond" %>
+		<![endif]-->
+  	<%= javascript_include_tag "application" %>
+  	<%= yield :script %>
     <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44981142-1', 'devinsantos.com.br');
+      ga('send', 'pageview');
     </script>
   </body>
 </html>

@@ -13,7 +13,15 @@
 }
 
 .talks-list__talk__info {
-	margin-left: 60px;
+	margin-left: 80px;
+}
+
+.talks-list__talk__title {
+	font-size: 1.1em;
+}
+
+.talks-list__talk__subtitle {
+	margin-top: em(10px);
 }
 
 .talks-list__interval {
@@ -24,4 +32,16 @@
 	line-height: 1.5em;
 	text-align: center;
 	color: #FFF;
+}
+
+@media screen and (min-width:600px) {
+	.talks-list__talk__info {
+		margin-left: 100px;
+	}
+}
+
+@media screen and (min-width:800px) {
+	.talks-list__talk__info {
+		margin-left: 120px;
+	}
 }

@@ -1,7 +1,9 @@
 <li class="talks-list__talk group">
-  <div class="speaker-avatar speaker-avatar--small"><%= gravatar_image_tag talk.speaker.email, :gravatar => { :size => 48 }, alt: talk.speaker.name %></div>
+  <div class="speaker-avatar speaker-avatar--small"><%= gravatar_image_tag talk.speaker.email, :gravatar => { :size => 220 }, alt: talk.speaker.name %></div>
   <div class="talks-list__talk__info">
-  <span class="is-smooth-text"><%= l talk.horary, :format => :talk %> na <%= talk.room.name %></span>
-  <br>
-  <strong><%= talk.name %></strong>
+    <span class="is-smooth-text"><strong><%= l talk.horary, :format => :talk %></strong> na <%= talk.room.name %></span>
+    <br>
+    <strong class="talks-list__talk__title"><%= talk.name %></strong>
+    <p class="talks-list__talk__subtitle"><%= talk.description %></p>
+  </div>
 </li>
