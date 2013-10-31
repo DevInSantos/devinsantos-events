@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta property="og:title" content="<%= @event.try(:name) || 'DevInSantos' %> - O maior encontro de desenvolvedores da Baixada Santista">
     <meta property="og:description" content="O DevInSantos, grupo de desenvolvedores de software em Santos, reúne profissionais e empreendedores na área de tecnologia da Baixada Santista.">
-    <meta property="og:image" content="<%= image_tag('devinsantos-logo.jpg') %>">
+    <meta property="og:image" content="<%= image_url('devinsantos-logo.jpg') %>">
     <meta property="og:url" content="<%= request.original_url %>">
     <meta property="og:site_name" content="<%= @event.try(:name) || 'DevInSantos' %> - O maior encontro de desenvolvedores da Baixada Santista">
     <meta property="og:type" content="website">
