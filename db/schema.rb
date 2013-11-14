@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.text     "description"
     t.string   "place",                                null: false
     t.string   "address",                              null: false
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "url"
     t.datetime "published_at"
     t.decimal  "price",        precision: 8, scale: 2
@@ -44,11 +44,11 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.string   "description"
     t.datetime "horary"
     t.integer  "event_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "intervals", ["event_id"], name: "index_breaks_on_event_id", using: :btree
+  add_index "intervals", ["event_id"], name: "index_intervals_on_event_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -57,16 +57,16 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.string   "table"
     t.integer  "month",      limit: 2
     t.integer  "year",       limit: 8
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "rooms", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "event_id"
     t.integer  "priority"
   end
@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.text     "description"
     t.string   "company"
     t.string   "email"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "twitter"
   end
 
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.string   "name"
     t.string   "logo_url"
     t.string   "sponsorship_type"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "event_id"
   end
 
@@ -100,8 +100,8 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.datetime "horary"
     t.integer  "speaker_id"
     t.integer  "room_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "talks", ["room_id"], name: "index_talks_on_room_id", using: :btree
@@ -118,8 +118,8 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
