@@ -19,7 +19,7 @@ end
 group :development, :test do
   gem "thin"
   gem "awesome_print"
-  gem "pry-rails"
+  gem "pry-meta"
   gem "sextant"
   gem 'rspec-rails'
 end
