@@ -1,7 +1,7 @@
 ruby "2.1.1"
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.5'
 gem 'pg'
 gem 'foreigner'
 gem 'validators'
@@ -12,7 +12,7 @@ gem 'draper'
 gem 'enumerate_it'
 
 group :assets do
-  gem 'sass-rails'
+  gem 'sass-rails', "~> 4.0.2"
   gem 'uglifier'
 end
 
@@ -21,7 +21,7 @@ group :development, :test do
   gem "awesome_print"
   gem "pry-meta"
   gem "sextant"
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.2'
 end
 
 group :test do
