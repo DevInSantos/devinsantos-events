@@ -1,7 +1,7 @@
-ruby "2.1.2"
+ruby "2.1.3"
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.5'
+gem 'rails', '4.0.10'
 gem 'pg'
 gem 'foreigner'
 gem 'validators'
