@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Track do
-
   it "should order two collections by horary" do
     now = DateTime.now
 
@@ -18,5 +17,4 @@ describe Track do
 
     expect(track.to_a).to eql [welcome, qualidade, coffee, maroto, bye]
   end
-
 end
