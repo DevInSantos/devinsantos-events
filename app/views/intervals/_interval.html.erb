@@ -1,5 +1,7 @@
-<li class="talks-list__interval">
-  <i class="icon icon-32 icon-interval"></i> <%= l interval.horary, :format => :talk %>
-  <br>
-  <strong><%= interval.description %></strong>
-</li>
+<% cache(interval) do %>
+  <li class="talks-list__interval">
+    <i class="icon icon-32 icon-interval"></i> <%= l interval.horary, :format => :talk %>
+    <br>
+    <strong><%= interval.description %></strong>
+  </li>
+<% end %>
