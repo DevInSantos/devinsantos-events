@@ -10,6 +10,9 @@ gem 'devise'
 gem 'gravatar_image_tag'
 gem 'draper'
 gem 'enumerate_it'
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
 
 group :assets do
   gem 'sass-rails', "~> 4.0.2"
