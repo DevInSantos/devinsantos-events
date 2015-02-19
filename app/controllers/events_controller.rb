@@ -7,7 +7,7 @@ class EventsController < ApplicationController
         @track = Track.new(IntervalDecorator.decorate_collection(@event.intervals), TalkDecorator.decorate_collection(@event.talks))
 
         expires_in 5.minutes
-        fresh_when [@event.intervals, @event.talks]
+        fresh_when([@event.intervals, @event.talks], public: true)
       end
     end
   end

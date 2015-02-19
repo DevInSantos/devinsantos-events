@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name",                                 null: false
     t.datetime "date",                                 null: false
     t.text     "description"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   add_index "events", ["date"], name: "index_events_on_date", using: :btree
   add_index "events", ["name"], name: "index_events_on_name", unique: true, using: :btree
 
-  create_table "events_speakers", id: false, force: true do |t|
+  create_table "events_speakers", id: false, force: :cascade do |t|
     t.integer "speaker_id"
     t.integer "event_id"
   end
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   add_index "events_speakers", ["event_id"], name: "index_events_speakers_on_event_id", using: :btree
   add_index "events_speakers", ["speaker_id"], name: "index_events_speakers_on_speaker_id", using: :btree
 
-  create_table "intervals", force: true do |t|
+  create_table "intervals", force: :cascade do |t|
     t.string   "description"
     t.datetime "horary"
     t.integer  "event_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
 
   add_index "intervals", ["event_id"], name: "index_intervals_on_event_id", using: :btree
 
-  create_table "rails_admin_histories", force: true do |t|
+  create_table "rails_admin_histories", force: :cascade do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
-  create_table "rooms", force: true do |t|
+  create_table "rooms", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   add_index "rooms", ["event_id"], name: "index_rooms_on_event_id", using: :btree
   add_index "rooms", ["priority"], name: "index_rooms_on_priority", using: :btree
 
-  create_table "speakers", force: true do |t|
+  create_table "speakers", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "company"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.string   "twitter"
   end
 
-  create_table "sponsors", force: true do |t|
+  create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.string   "logo_url"
     t.string   "sponsorship_type"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
     t.integer  "event_id"
   end
 
-  create_table "talks", force: true do |t|
+  create_table "talks", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "link"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   add_index "talks", ["room_id"], name: "index_talks_on_room_id", using: :btree
   add_index "talks", ["speaker_id"], name: "index_talks_on_speaker_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -125,16 +125,3 @@ ActiveRecord::Schema.define(version: 20131019194619) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "events_speakers", "events", name: "events_speakers_event_id_fk"
-  add_foreign_key "events_speakers", "speakers", name: "events_speakers_speaker_id_fk"
-
-  add_foreign_key "intervals", "events", name: "breaks_event_id_fk"
-
-  add_foreign_key "rooms", "events", name: "rooms_event_id_fk"
-
-  add_foreign_key "sponsors", "events", name: "sponsors_event_id_fk"
-
-  add_foreign_key "talks", "rooms", name: "talks_room_id_fk"
-  add_foreign_key "talks", "speakers", name: "talks_speaker_id_fk"
-
-end
