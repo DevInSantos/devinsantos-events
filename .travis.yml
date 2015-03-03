@@ -5,6 +5,7 @@ before_script:
   - cp config/database.example.yml config/database.yml
   - psql -c 'create database devinsantos_test;' -U postgres
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:drop db:create 
+  - RAILS_ENV=test bundle exec rake --trace db:drop 
+  - RAILS_ENV=test bundle exec rake --trace db:create 
   - RAILS_ENV=test bundle exec rake --trace db:migrate
   - RAILS_ENV=test bundle exec rspec spec
