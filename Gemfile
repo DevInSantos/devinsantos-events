@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'pg'
-gem 'foreigner'
 gem 'validators'
 gem 'rails_admin'
 gem 'devise'
