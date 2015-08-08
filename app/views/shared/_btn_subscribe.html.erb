@@ -1,5 +1,5 @@
-<%= link_to 'javascript:;', :target => '_blank', :onclick => "ga('send', 'event', 'btn_subscribe', 'click');", :class => 'btn-subscribe' do %>
-  <b>EM BREVE</b>
+<%= link_to @event.url, :target => '_blank', :onclick => "ga('send', 'event', 'btn_subscribe', 'click');", :class => 'btn-subscribe' do %>
+  <b>INSCREVA-SE</b>
   <br>
-  Aguarde as inscrições
+  Aproveite o desconto
 <% end %>
