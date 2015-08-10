@@ -11,4 +11,6 @@ Devinsantos::Application.routes.draw do
   end
 
   get "speaker/:id" => "speakers#speaker", as: :speaker
+
+  get "clear_cache" => "caches#clear"
 end
