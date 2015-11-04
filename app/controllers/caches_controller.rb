@@ -4,6 +4,6 @@ class CachesController < ApplicationController
   def clear
     Rails.cache.clear
 
-    render nothing: true
+    redirect_to :root
   end
 end
